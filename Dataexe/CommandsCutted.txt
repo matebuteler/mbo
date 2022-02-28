@@ -1,0 +1,322 @@
+FIND "Activation=Plus+" %SystemDrive%\MBO\Data\version.ini
+
+
+if not exist %SystemDrive%\MBO\Data goto install
+
+if exist %SystemDrive%\MBO\Data goto run
+
+
+
+
+
+
+
+
+
+if %var1%==1 xcopy Data "%SystemDrive%\MBO\Data" /E
+IF %var1%==2 goto run
+if %var1%==3 goto setup
+if %var1%==4 goto toolbox
+
+
+Escriba "P" para ACTIVAR FixItNow o "C" para DESACTIVAR FixItNow.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+___________________________________________________________________________________________________________________________________________________________________!
+:clean                                                                                                                                                      
+cls
+
+Echo.
+Echo.
+Echo.
+Echo.
+Echo ------------------Matebute Programs-------------------
+Echo.
+Echo.
+Echo.
+Echo Bienvendido a MatebutePCOptimizer, el optimizador mas ligero.
+Echo.
+Echo.
+Echo.
+Echo.
+if not exist "%SystemDrive%\MBO\Data\v1.10.1" echo MBO no est  instalado. Porfavor inst lelo. & pause 1>nul
+exit
+
+
+
+
+
+Echo Para iniciar el escaneo, presione una tecla.
+pause >nul
+
+if exist %temp% echo ENCONTRADO 1ª TACHO DE BASURA
+if exist %windir%/temp echo ENCONTRADO 2º TACHO DE BASURA
+
+
+echo Este paso ralentizar   en un 6 de 100 la velocidad de inicio del PC. Luego de 3 reinicios, se restaurar .
+pause
+
+if exist %windir%/Prefetch del /f /s /q C:\Windows\Prefetch
+
+start %windir%\system32\rundll32.exe advapi32.dll,ProcessIdleTasks
+start %windir%\system32\rundll32.exe advapi32.dll,ProcessIdleTasks
+
+
+taskkill /IM reader_sl.exe /F
+taskkill /IM jqs.exe /F
+taskkill /IM osa.exe /F
+taskkill /IM soffice.exe /F
+taskkill /IM AdobeARM.exe /F
+taskkill /IM Jusched.exe /F
+taskkill /IM DivXUpdate.exe /F
+taskkill /IM NeroCheck.exe /F
+taskkill /IM HKCMD.exe /F
+taskkill /IM atiptaxx.exe /F
+taskkill /IM ati2evxx.exe /F
+taskkill /IM RAVCpl64.exe /F
+taskkill /IM Nwiz.exe /F
+taskkill /IM SynTPEnh.exe /F
+taskkill /IM winampa.exe /F
+taskkill /IM iTunesHelper.exe /F
+taskkill /IM iPodService.exe /F
+taskkill /IM OSPPSVC.exe /F
+taskkill /IM Sidebar.exe /F
+taskkill /IM wmpnetwk.exe /F
+
+cls
+echo ------------------Pasos 1 y 2 terminados satisfactoriamente--------------------
+
+powercfg -h off
+Echo.
+Del /s /q /f "%SystemDrive%\Users\%username%\AppData\Local\Downloaded Installations\*.*"
+Echo.
+Del /s /q /f "%SystemDrive%\Windows\System32\spool\printers\*.*"
+Echo.
+Del /s /q /f "%UserProfile%\AppData\Roaming\Macromedia\Flash Player\*.*"
+Echo.
+Del /s /q /f "%UserProfile%\AppData\Local\Microsoft\Windows\Explorer\Thumbcache_*.db"
+Echo.
+Del /s /q /f "%SystemDrive%\ProgramData\Microsoft\Search\Data\Applications\Windows\Windows.edb"
+Echo.
+Del /s /q /f "%SystemDrive%\ProgramData\USOPrivate\*.*"
+Echo.
+Del /s /q /f "%SystemDrive%\ProgramData\USOShared\*.*"
+Echo.
+Del /s /q /f "%UserProfile%\AppData\Local\Mozilla\Firefox\Profiles\*.*"
+Echo.
+Del /s /q /f "%UserProfile%\AppData\Local\Microsoft\Windows\Caches\*.*"
+Echo.
+Del /s /q /f "%UserProfile%\AppData\Local\Microsoft\Windows\INetCache\Low\IE\*.*"
+Echo.
+Del /s /q /f "%UserProfile%\AppData\Local\Microsoft\Windows\INetCache\IE\*.*"
+Echo.
+Del /s /q /f "%UserProfile%\AppData\Local\Microsoft\Windows\WebCache\*.log"
+Echo.
+Del /s /q /f "%UserProfile%\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\*.*"
+Echo.
+Del /s /q /f "%SystemDrive%\ProgramData\Microsoft\Windows Defender\Scans\History\Results\*.*"
+Echo.
+Del /s /q /f "%UserProfile%\AppData\Roaming\FastStone\FSIV\HisFolderList.db"
+Echo.
+pause
+Del /s /q /f "%SystemDrive%\Windows\Logs\*.log"
+pause
+Echo.
+Del /s /q /f "%UserProfile%\*.torrent"
+Echo.
+Del /s /q /f "%SystemDrive%\*.tmp"
+Echo.
+rd /s /q "%UserProfile%\AppData\Local\HomeDev"
+Echo.
+rd /s /q "%UserProfile%\AppData\Roaming\Wise Registry Cleaner"
+Echo.
+rd /s /q "%UserProfile%\AppData\Roaming\Wise Euask"
+Echo.
+rd /s /q "%UserProfile%\AppData\Roaming\Wise Care 365"
+Echo.
+rd /s /q "%UserProfile%\AppData\Local\CrashDumps"
+Echo.
+rd /s /q "%SystemDrive%\Program Files\NVIDIA Corporation\Installer2"
+Echo.
+rd /s /q "%SystemDrive%\Windows\Downloaded Installations"
+Echo.
+rd /s /q "%SystemDrive%\Windows\SoftwareDistribution\Download"
+Echo.
+reg delete HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths /v url1 /f
+reg delete HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths /v url2 /f
+reg delete HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths /v url3 /f
+reg delete HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths /v url4 /f
+reg delete HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths /v url5 /f
+reg delete HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths /v url6 /f
+Echo.
+CD C:\$Recycle.Bin\
+echo ESTO BORRARµ TODA LA PAPELERA DE RECICLAJE. PRESIONE CUALQUIER TECLA PARA CONTINUAR.
+pause >nul
+DEL /Q /F /S /A R H S .
+Echo.
+md "%SystemDrive%\Windows\Downloaded Installations"
+Echo.
+md "%SystemDrive%\Windows\SoftwareDistribution\Download"
+Echo.
+set /p 
+TASKKILL /F /IM SearchIndexer.exe
+Echo.
+
+
+
+
+
+cls
+
+echo ------------------Pasos 1, 2 y 3 terminados satisfactoriamente--------------------
+
+pause
+net stop WSearch
+net stop stisvc
+net stop seclogon
+net stop iphlpsvc
+net stop MapsBroker
+net stop DPS
+net stop lfsvc
+net stop UsoSvc
+net stop SCardSvr
+net stop WerSvc
+net stop WMPNetworkSvc
+net stop TabletInputService
+net stop qWave
+net stop Wercplsupport
+net stop WinRM
+net stop PeerDistSvc
+net stop RemoteRegistry
+net stop SensrSvc
+net stop gupdate
+net stop gupdatem
+net stop xblGameSave
+net stop xblAuthManager
+net stop xboxNetApiSvc
+net stop Spooler
+net stop WSearch
+net stop WuAuServ
+net stop Snmptrap
+net stop SCPolicySvc
+net stop SCardSvr
+net stop RemoteRegistry
+net stop RpcLocator
+net stop CscService
+net stop Netlogon
+net stop superfetch
+net stop TrkWks
+net stop wercplsupport
+net stop MBAMScheduler
+net stop Browser
+net stop UmRdpService
+net stop WbioSrvc
+net stop napagent
+net stop PeerDistSvc
+net stop AdobeFlashPlayerUpdateSvc
+net stop AGSService
+net stop ss_conn_service
+net stop SDRSVC
+net stop CertPropSvc
+net stop SessionEnv
+net stop MSiSCSI
+netsh interface ipv6 6to4 set state state=disabled
+netsh interface ipv6 isatap set state state=disabled
+netsh interface ipv6 set teredo type=disabled
+Echo.
+sc stop dmwappushservice
+sc config dmwappushservice start= disabled
+sc delete dmwappushservice
+Echo.
+sc stop Diagtrack
+sc config DiagTrack start= disabled
+sc delete Diagtrack
+
+Echo.
+Echo.
+Echo.
+echo -----------------Iniciando servicios anteriormente detenidos-------------------
+
+Echo.
+netsh interface ip delete arpcache
+Echo.
+nbtstat -RR
+Echo.
+nbtstat -R
+Echo.
+ipconfig /registerdns
+Echo.
+ipconfig /flushdns
+Echo.
+ipconfig /release
+Echo.
+ipconfig /renew
+cls
+
+
+
+cd "%SystemDrive%\MBO\Data"
+
+
+
+choice /c "sn" /m Paso siguiente: Borrar registros de todos los programas (Borrar ".log"). Presione "S" para continuar y "N" para salearse este paso.
+
+goto :n
+
+
+
+
+:s
+Echo Borrando .log...
+Del /s /q "%SystemDrive%\*.log"
+
+cls
+Echo Realizado.
+
+GOTO n
+
+
+
+
+
+
+
+
+:n
+
+msg %username% Iniciando secuencia 2...
+Timeout -t 3
+
+
+cd CrEcttREG_suo3
+Reg_suo-3-Data.reg
+
+cd "%SystemDrive%\MBO\Data"
+cd FxItNw_suo5
+cd ScheduledTask\FixItNowSch
+schtasks /create /tr "%SystemDrive%\MBO\Data\FxItNw_suo5\ScheduledTask\FixItNowSch.bat" /tn MatebuteFixItNowScheduledTask /sc hourly
+________________________________________________________________________________________________________________________________________
+
+
+if not exist "%SystemDrive%\MBO\Data\v1.10.1.ini" echo MBO no est  instalado. Porfavor inst lelo. & pause 1>nul
+
+
+
+
+
+chkdsk %SystemDrive% /perf /scan
+defrag /a %SystemDrive% /c /h /x 
