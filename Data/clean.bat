@@ -269,4 +269,4 @@ Reg_suo-3-Data.reg
 cd "%SystemDrive%\MBO\Data"
 cd FxItNw_suo5
 cd ScheduledTask\FixItNowSch
-schtasks /create /tr "%SystemDrive%\MBO\Data\FxItNw_suo5\ScheduledTask\FixItNowSch.bat" /tn MatebuteFixItNowScheduledTask /sc hourly
+REM schtasks /create /tr "%SystemDrive%\MBO\Data\FxItNw_suo5\ScheduledTask\FixItNowSch.bat" /tn MatebuteFixItNowScheduledTask /sc hourly
