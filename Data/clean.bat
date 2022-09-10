@@ -1,4 +1,5 @@
 @echo off
+set %Cfg% = %SystemDrive%\MBO\Data\Config
 
 @Echo.
 Echo.
@@ -22,16 +23,16 @@ if not exist "%SystemDrive%\MBO\Data\" echo MBO no est� instalado. Porfavor in
 Echo Para iniciar el escaneo, presione una tecla.
 pause >nul
 
-if exist %temp% echo ENCONTRADO 1� TACHO DE BASURA
-if exist %windir%/temp echo ENCONTRADO 2� TACHO DE BASURA
+if exist %temp% echo ENCONTRADOS TEMPORALES "C:\Windows\temp"
+if exist %windir%/temp echo ENCONTRADOS TEMPORALES "System32\temp"
 
-
-if exist %SystemDrive%\MBO\Data\PFun goto pfs
+:: skip prefetch deletion if PrefetchDelete file doesn't exist
+if not exist %SystemDrive%\MBO\Data\Config\pfd goto pfs
 
 if exist %windir%/Prefetch del /f /s /q C:\Windows\Prefetch
 
 start %windir%\system32\rundll32.exe advapi32.dll,ProcessIdleTasks
-start %windir%\system32\rundll32.exe advapi32.dll,ProcessIdleTasks
+
 
 :pfs
 taskkill /IM reader_sl.exe /F
@@ -58,7 +59,9 @@ taskkill /IM wmpnetwk.exe /F
 cls
 echo ------------------Pasos 1 y 2 terminados satisfactoriamente--------------------
 
-powercfg -h off
+:: turn off hibernation bc of hiberfil.sys
+if exist %Cfg%\hboff powercfg -h off
+
 Echo.
 Del /s /q /f "%SystemDrive%\Users\%username%\AppData\Local\Downloaded Installations\*.*"
 Echo.
@@ -231,7 +234,7 @@ cd "%SystemDrive%\MBO\Data"
 
 
 
-choice /c "sn" /m Paso siguiente: Borrar registros de todos los programas (Borrar ".log"). Presione "S" para continuar y "N" para salearse este paso.
+choice /c "sn" /m Paso siguiente: Borrar registros de todos los programas (Borrar ".log"). Presione "S" para continuar y "N" para saltearse este paso.
 
 goto :n
 

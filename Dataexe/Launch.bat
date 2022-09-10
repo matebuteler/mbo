@@ -158,9 +158,9 @@ Echo �Qu� desea configurar?
 Echo.
 Echo.
 Echo.
-Echo 1_ Color de la ventana         4_Instalar/Desinstalar
-Echo 2_Matebute FixItNow            5_Copiar a USB
-Echo 3_Perfiles   (sin funcionar)   6_Volver              
+Echo 1_ Color de la ventana          4_ Instalar/Desinstalar
+Echo 2_ Matebute FixItNow            5_ Copiar a USB
+Echo 3_ Perfiles   (sin funcionar)   6_ Volver              
 Echo.
 Echo.
 Echo.
@@ -204,7 +204,7 @@ Echo    1 = Azul        9 = Azul claro
 Echo    2 = Verde       A = Verde claro
 Echo    3 = Aguamarina  B = Aguamarina claro
 Echo    4 = Rojo        C = Rojo claro
-Echo    5 = P�rpura     D = P�rpura claro
+Echo    5 = P�rpura    D = P�rpura claro
 Echo    6 = Amarillo    E = Amarillo claro
 Echo    7 = Blanco      F = Blanco brillante
 
@@ -213,6 +213,7 @@ Echo    7 = Blanco      F = Blanco brillante
 set /p "color= "
 
 color %color%
+echo %color% 
 
 goto setup
 
@@ -808,7 +809,7 @@ Echo -------------------------DiskDoctor--------------------------
 Echo.
 Echo.
 Echo.
-Echo Has llegado al punto en el que me cansé de programar sta wea. Que algún buen hombre en GitHub la termine, gracias.
+Echo 
 pause 
 
 :goto toolbox
@@ -820,7 +821,7 @@ Echo -------------------------FileDeleter--------------------------
 Echo.
 Echo.
 Echo.
-Echo Has llegado al punto en el que me cansé de programar sta wea. Que algún buen hombre en GitHub la termine, gracias.
+Echo 
 pause 
 
 :goto toolbox
